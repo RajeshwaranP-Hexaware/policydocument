@@ -13,8 +13,10 @@ app.get('/policydocument', function(req, res){
     let filePath = "./"+fileName+".pdf";
     console.log(filePath);
     fs.readFile(filePath , function (err,data){
-        res.contentDisposition("inline");
-        res.contentType("application/pdf");
+        // res.setHeader("Content-Disposition","inline");
+        // res.contentType("application/pdf");
+        res.setHeader('Content-disposition', 'inline; filename="' + fileName + ".pdf" + '"');
+        res.setHeader('Content-type', 'application/pdf');
         res.send(data);
     });
 });
