@@ -4,6 +4,10 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 
+app.get('/', function(req, res){
+    return res.send('I am Up');
+});
+
 app.get('/policydocument', function(req, res){
     let fileName = req.query.fileName ? req.query.fileName.toLowerCase(): ""; 
     let filePath = "./"+fileName+".pdf";
