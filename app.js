@@ -18,6 +18,6 @@ app.get('/policydocument', function(req, res){
     });
 });
 
-app.listen(process.env.port || process.env.PORT || 4500, function(){
+app.listen(process.env.port || process.env.PORT, function(){
     console.log('Listening on 3000');
 });
