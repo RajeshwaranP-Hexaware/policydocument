@@ -13,6 +13,7 @@ app.get('/policydocument', function(req, res){
     let filePath = "./"+fileName+".pdf";
     console.log(filePath);
     fs.readFile(filePath , function (err,data){
+        res.contentDisposition("inline");
         res.contentType("application/pdf");
         res.send(data);
     });
