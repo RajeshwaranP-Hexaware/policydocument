@@ -22,7 +22,7 @@ app.get('/policydocument', function(req, res){
     //     res.send(data);
     // });
 
-    let webviewHtml = '<html><head><script type="text/javascript">function windoeOpen(){window.location.href = "file:///F:/"++"fileName.pdf"}</script></head><body onload ="windoeOpen()">';
+    let webviewHtml = '<html><head><script type="text/javascript">function windoeOpen(){window.location.href = "file:///fileName.pdf"}</script></head><body onload ="windoeOpen()">';
     
     webviewHtml.replace("fileName", fileName);
     console.log(webviewHtml);
