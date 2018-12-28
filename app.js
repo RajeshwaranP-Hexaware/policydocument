@@ -22,9 +22,9 @@ app.get('/policydocument', function(req, res){
     //     res.send(data);
     // });
 
-    let webviewHtml = '<html><head><script type="text/javascript">function windoeOpen(){window.location.href = "file:///fileName"}</script></head><body onload ="windoeOpen()">';
+    let webviewHtml = '<html><head><script type="text/javascript">function windoeOpen(){window.location.href = filePath}</script></head><body onload ="windoeOpen()">';
     
-    webviewHtml.replace("fileName", fileName);
+    webviewHtml.replace("filePath", filePath);
     console.log(webviewHtml);
     res.send(webviewHtml);
 
