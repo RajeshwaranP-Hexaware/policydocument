@@ -25,7 +25,7 @@ app.get('/policydocument', function(req, res){
     let webviewHtml = '<html><head><script type="text/javascript">function windoeOpen(){window.location.href = filePath}</script></head><body onload ="windoeOpen()">';
     
     webviewHtml.replace("filePath", filePath);
-    console.log(webviewHtml);
+    console.log(webviewHtml, fileName, filePath);
     res.send(webviewHtml);
 
 });
