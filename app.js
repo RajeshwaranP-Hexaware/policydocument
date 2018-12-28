@@ -22,11 +22,22 @@ app.get('/policydocument', function(req, res){
     //     res.send(data);
     // });
 
-    let webviewHtml = '<html><head><script type="text/javascript">function windoeOpen(){window.location.href = "file:///fileName"}</script></head><body onload ="windoeOpen()">';
+    // let webviewHtml = '<html><head><script type="text/javascript">function windoeOpen(){window.location.href = "file:///fileName"}</script></head><body onload ="windoeOpen()">';
     
-    webviewHtml = webviewHtml.replace("fileName", fileName);
-    console.log(webviewHtml);
-    res.send(webviewHtml);
+    // webviewHtml = webviewHtml.replace("fileName", fileName);
+    // console.log(webviewHtml);
+    // res.send(webviewHtml);
+
+  var stream = fs.readStream(filePath);
+  // Be careful of special characters
+
+  var fileName = encodeURIComponent(fileName);
+  // Ideally this should strip them
+
+  res.setHeader('Content-disposition', 'inline; filename="' + fileName + '"');
+  res.setHeader('Content-type', 'application/pdf');
+
+  stream.pipe(res);
 
 });
 
