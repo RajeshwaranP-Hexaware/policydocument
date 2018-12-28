@@ -31,7 +31,7 @@ app.get('/policydocument', function(req, res){
   var stream = fs.readStream(filePath);
   // Be careful of special characters
 
-  var fileName = encodeURIComponent(fileName);
+  fileName = encodeURIComponent(fileName);
   // Ideally this should strip them
 
   res.setHeader('Content-disposition', 'inline; filename="' + fileName + '"');
