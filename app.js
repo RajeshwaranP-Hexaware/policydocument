@@ -13,14 +13,14 @@ app.get('/policydocument', function(req, res){
     //let filePath = "./"+fileName+".pdf";
     let filePath = "./"+fileName;
     // console.log(filePath);
-    // fs.readFile(filePath , function (err,data){
-    //     // res.setHeader("Content-Disposition","inline");
-    //     // res.contentType("application/pdf");
-    //     // res.setHeader('Content-Disposition', 'inline; filename=' + fileName + '.pdf');
-    //     res.setHeader('Content-Disposition', 'inline; filename=' + fileName );
-    //     res.setHeader('Content-Type', 'application/pdf');
-    //     res.send(data);
-    // });
+     fs.readFile(filePath , function (err,data){
+         // res.setHeader("Content-Disposition","inline");
+         // res.contentType("application/pdf");
+         // res.setHeader('Content-Disposition', 'inline; filename=' + fileName + '.pdf');
+         res.setHeader('Content-Disposition', 'inline; filename=' + fileName );
+         res.setHeader('Content-Type', 'application/pdf');
+         res.send(data);
+     });
 
     // let webviewHtml = '<html><head><script type="text/javascript">function windoeOpen(){window.location.href = "file:///fileName"}</script></head><body onload ="windoeOpen()">';
     
@@ -28,16 +28,16 @@ app.get('/policydocument', function(req, res){
     // console.log(webviewHtml);
     // res.send(webviewHtml);
 
-  var stream = fs.readStream(filePath);
+  //var stream = fs.readStream(filePath);
   // Be careful of special characters
 
-  fileName = encodeURIComponent(fileName);
+  //fileName = encodeURIComponent(fileName);
   // Ideally this should strip them
 
-  res.setHeader('Content-disposition', 'inline; filename="' + fileName + '"');
-  res.setHeader('Content-type', 'application/pdf');
+//  res.setHeader('Content-disposition', 'inline; filename="' + fileName + '"');
+ // res.setHeader('Content-type', 'application/pdf');
 
-  stream.pipe(res);
+ // stream.pipe(res);
 
 });
 
