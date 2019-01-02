@@ -44,7 +44,8 @@ app.get('/policydocument', function(req, res){
 app.get('/docs', function(req, res){
     //let webviewHtml = '<html><head></head><body><iframe src="https://docs.google.com/gview?url=https://policy-test.herokuapp.com/policydocument?fileName=leave%20policy.pdf&embedded=true" onload="javascript:this.contentWindow.location.hash=0.page.20;" style="width: 1000px;height: 1000px;"></body>'
     //let webviewHtml = '<html><head><meta charset="UTF-8"><style>body {margin: 0;}iframe {display: block;background: #000;border: none;height: 1000vh;width: 1000vw;}</iframe></style></head><body><iframe src="https://policy-test.herokuapp.com/policydocument?fileName=leave%20policy.pdf#page=5" style="width: 100px;height: 200px;"></body>';
-    let webviewHtml = '<html><head><meta charset="UTF-8"></head><body><embed type="application/pdf" src="https://policy-test.herokuapp.com/policydocument?fileName=leave%20policy.pdf#page=7" width=90% height=90%></body>';
+ //   let webviewHtml = '<html><head><meta charset="UTF-8"></head><body><embed type="application/pdf" src="https://policy-test.herokuapp.com/policydocument?fileName=leave%20policy.pdf#page=7" width=90% height=90%></body>';
+    let webviewHtml = '<html><body><object data="https://policy-test.herokuapp.com/policydocument?fileName=leave%20policy.pdf#page=7" type="application/pdf" width="600" height="500"><embed src="https://policy-test.herokuapp.com/policydocument?fileName=leave%20policy.pdf#page=7" width="600px" height="500px" /></embed></object></body></html>'
     res.send(webviewHtml);
     //return res.render('/pdf.html');
     // fs.readFile("./pdf.html", function (error, pgResp) {
