@@ -43,7 +43,7 @@ app.get('/policydocument', function(req, res){
 
 app.get('/docs', function(req, res){
     //let webviewHtml = '<html><head></head><body><iframe src="https://docs.google.com/gview?url=https://policy-test.herokuapp.com/policydocument?fileName=leave%20policy.pdf&embedded=true" onload="javascript:this.contentWindow.location.hash=0.page.20;" style="width: 1000px;height: 1000px;"></body>'
-    let webviewHtml = '<html><head><style>body {margin: 0;}iframe {display: block;background: #000;border: none;height: 100vh;width: 100vw;}</style></head><body><iframe src="https://policy-test.herokuapp.com/policydocument?fileName=leave%20policy.pdf#page=5" style="width: 100px;height: 200px;"></body>'
+    let webviewHtml = '<html><head><style>body {margin: 0;}iframe {display: block;background: #000;border: none;height: 200vh;width: 200vw;}</style></head><body><iframe src="https://policy-test.herokuapp.com/policydocument?fileName=leave%20policy.pdf#page=5" style="width: 100px;height: 200px;"></body>';
     res.send(webviewHtml);
 });
 
