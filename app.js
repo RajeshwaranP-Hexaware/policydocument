@@ -46,7 +46,7 @@ app.get('/docs', function(req, res){
     //let webviewHtml = '<html><head><meta charset="UTF-8"><style>body {margin: 0;}iframe {display: block;background: #000;border: none;height: 1000vh;width: 1000vw;}</iframe></style></head><body><iframe src="https://policy-test.herokuapp.com/policydocument?fileName=leave%20policy.pdf#page=5" style="width: 100px;height: 200px;"></body>';
     // let webviewHtml = '<html><head><meta charset="UTF-8"></head><body><iframe src="https://policy-test.herokuapp.com/policydocument?fileName=leave%20policy.pdf#page=7" width=100% height=100%></iframe></body>';
     // res.send(webviewHtml);
-    return res.sendFile('./pdf.html');
+    return res.sendFile('/pdf.html', {root: __dirname });
 });
 
 app.get('/policy', function(req, res){
