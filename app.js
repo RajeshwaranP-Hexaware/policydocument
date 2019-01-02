@@ -3,6 +3,9 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
+var cors = require('cors');
+
+app.use(cors());
 
 app.get('/', function(req, res){
     return res.send('I am Up');
@@ -55,6 +58,7 @@ app.get('/docs', function(req, res){
     // });
 
 });
+
 
 app.listen(process.env.port || process.env.PORT, function(){
     console.log('Listening on 3000');
