@@ -17,7 +17,7 @@ app.get('/policydocument', function(req, res){
          // res.setHeader("Content-Disposition","inline");
          // res.contentType("application/pdf");
          // res.setHeader('Content-Disposition', 'inline; filename=' + fileName + '.pdf');
-         res.setHeader('Content-Disposition', 'inline; filename=' + fileName );
+         //res.setHeader('Content-Disposition', 'inline; filename=' + fileName );
          //res.setHeader('Content-Type', 'application/pdf');
          res.send(data);
      });
