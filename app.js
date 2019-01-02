@@ -18,7 +18,7 @@ app.get('/policydocument', function(req, res){
          // res.contentType("application/pdf");
          // res.setHeader('Content-Disposition', 'inline; filename=' + fileName + '.pdf');
          res.setHeader('Content-Disposition', 'inline; filename=' + fileName );
-         res.setHeader('Content-Type', 'application/pdf');
+         //res.setHeader('Content-Type', 'application/pdf');
          res.send(data);
      });
 
@@ -53,10 +53,6 @@ app.get('/docs', function(req, res){
     //     resp.end();
     // });
 
-});
-
-app.get('/policy', function(req, res){
-    res.redirect();
 });
 
 app.listen(process.env.port || process.env.PORT, function(){
