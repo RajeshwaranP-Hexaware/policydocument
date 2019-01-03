@@ -7,6 +7,8 @@ var cors = require('cors');
 var path = require('path');
 
 app.use(cors());
+app.use(express.static('public'));
+app.use('/web', express.static(path.join(__dirname, 'public')))
 
 app.get('/', function(req, res){
     return res.send('I am Up');
@@ -61,7 +63,7 @@ app.get('/docs', function(req, res){
 });
 
 app.get('/pdf', function(req, res){
-    res.sendFile(path.join(__dirname + '/pdfjs-2.0.943-dist/index.html'));
+    res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 app.listen(process.env.port || process.env.PORT, function(){
