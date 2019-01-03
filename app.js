@@ -8,7 +8,6 @@ var path = require('path');
 
 app.use(cors());
 app.use(express.static('public'));
-app.use('/app', express.static(path.join(__dirname, 'public')))
 app.use('/web', express.static(path.join(__dirname, 'public')))
 
 app.get('/', function(req, res){
@@ -66,7 +65,7 @@ app.get('/docs', function(req, res){
 app.get('/pdf', function(req, res){
     console.log(__dirname);
     console.log( __dirname.replace(path.basename(__dirname),''));
-    res.sendFile( '/public/web/viewer.html?file=leavepolicy.pdf#page=5');
+    res.sendFile( '/web/viewer.html?file=leavepolicy.pdf#page=5');
 });
 
 app.listen(process.env.port || process.env.PORT, function(){
