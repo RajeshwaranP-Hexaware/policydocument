@@ -4,6 +4,7 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 var cors = require('cors');
+var path = require('path');
 
 app.use(cors());
 
@@ -59,6 +60,9 @@ app.get('/docs', function(req, res){
 
 });
 
+app.get('/pdf', function(req, res){
+    res.sendFile(path.join(__dirname + '/pdfjs-2.0.943-dist/index.html'));
+});
 
 app.listen(process.env.port || process.env.PORT, function(){
     console.log('Listening on 3000');
