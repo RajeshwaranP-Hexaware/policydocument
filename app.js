@@ -61,7 +61,7 @@ app.get('/docs', function(req, res){
 });
 
 app.get('/pdf', function(req, res){
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.sendFile(path.join(__dirname + '/pdfjs-2.0.943-dist/index.html'));
 });
 
 app.listen(process.env.port || process.env.PORT, function(){
