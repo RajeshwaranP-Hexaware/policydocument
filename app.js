@@ -65,7 +65,7 @@ app.get('/docs', function(req, res){
 app.get('/pdf', function(req, res){
     console.log(__dirname);
     console.log( __dirname.replace(path.basename(__dirname),''));
-    res.sendFile(path.join(__dirname + '/public/index.html'));
+    res.sendFile(path.join(__dirname + '/public/pdf_view.html'));
     //res.sendFile(path.join(__dirname + '/public/web/viewer.html'+'?file='+req.queryfilename));
     //res.sendFile(path.join(__dirname,'../public', '/web/viewer.html?file=leavepolicy.pdf#page=5'));
 });
