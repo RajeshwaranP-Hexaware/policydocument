@@ -42,7 +42,8 @@ module.exports = {
     var url = "https://cdn.mozilla.net/pdfjs/tracemonkey.pdf";
 var container = document.getElementById('container');
 // Load document
-PDFJS.getDocument(url).then(function (doc) {
+pdfjsDistBuildPdf.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
+pdfjsDistBuildPdf.getDocument(url).then(function (doc) {
   var promise = Promise.resolve();
   for (var i = 0; i < doc.numPages; i++) {
     // One-by-one load pages
@@ -50,14 +51,14 @@ PDFJS.getDocument(url).then(function (doc) {
       return doc.getPage(id + 1).then(function (pdfPage) {
 // Add div with page view.
 var SCALE = 1.0; 
-var pdfPageView = new PDFJS.PDFPageView({
+var pdfPageView = new pdfjsDistBuildPdf.PDFPageView({
       container: container,
       id: id,
       scale: SCALE,
       defaultViewport: pdfPage.getViewport(SCALE),
       // We can enable text/annotations layers, if needed
-      textLayerFactory: new PDFJS.DefaultTextLayerFactory(),
-      annotationLayerFactory: new PDFJS.DefaultAnnotationLayerFactory()
+      textLayerFactory: new pdfjsDistBuildPdf.DefaultTextLayerFactory(),
+      annotationLayerFactory: new pdfjsDistBuildPdf.DefaultAnnotationLayerFactory()
     });
     // Associates the actual page with the view, and drawing it
     pdfPageView.setPdfPage(pdfPage);
