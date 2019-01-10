@@ -5,7 +5,6 @@ const fs = require('fs');
 const app = express();
 var cors = require('cors');
 var path = require('path');
-
 app.use(cors());
 app.use(express.static('public'));
 app.use('/web', express.static(path.join(__dirname, 'public')))
@@ -70,6 +69,15 @@ app.get('/pdf', function(req, res){
     //res.sendFile(path.join(__dirname,'../public', '/web/viewer.html?file=leavepolicy.pdf#page=5'));
 });
 
-app.listen(process.env.port || process.env.PORT, function(){
+app.get('/getpolicydocument', function(req, res) {
+	//console.log(path.join(__dirname + '../../public/pdf_view.html'));
+	let template		= require('./public/web/web_viewer.js').template;		
+    console.log(template);
+    res.send(template);
+	res.end();
+    //res.sendFile(path.join(__dirname + '../../public/web_viewer.js'));
+});
+
+app.listen(process.env.port || 3000, function(){
     console.log('Listening on 3000');
 });
