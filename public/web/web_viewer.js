@@ -29,11 +29,45 @@ module.exports = {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>PDF.js viewer</title>
     
+        <style>
+        #container > *:not(:first-child) {
+          border-top: solid 1px black; 
+        }
+        </style>
         <link href="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.css" rel="stylesheet"/>
         <script src="https://npmcdn.com/pdfjs-dist/web/compatibility.js"></script>
         <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script>
         <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
-    
+    <script>
+    var url = "https://cdn.mozilla.net/pdfjs/tracemonkey.pdf";
+var container = document.getElementById('container');
+// Load document
+PDFJS.getDocument(url).then(function (doc) {
+  var promise = Promise.resolve();
+  for (var i = 0; i < doc.numPages; i++) {
+    // One-by-one load pages
+    promise = promise.then(function (id) {
+      return doc.getPage(id + 1).then(function (pdfPage) {
+// Add div with page view.
+var SCALE = 1.0; 
+var pdfPageView = new PDFJS.PDFPageView({
+      container: container,
+      id: id,
+      scale: SCALE,
+      defaultViewport: pdfPage.getViewport(SCALE),
+      // We can enable text/annotations layers, if needed
+      textLayerFactory: new PDFJS.DefaultTextLayerFactory(),
+      annotationLayerFactory: new PDFJS.DefaultAnnotationLayerFactory()
+    });
+    // Associates the actual page with the view, and drawing it
+    pdfPageView.setPdfPage(pdfPage);
+    return pdfPageView.draw();        
+      });
+    }.bind(null, i));
+  }
+  return promise;
+});
+    </script>
       </head>
     
       <body tabindex="1" class="loadingInProgress">
