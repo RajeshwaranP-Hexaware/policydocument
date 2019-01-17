@@ -70,7 +70,7 @@ module.exports = {
 <body tabindex="1">
   <div id="pageContainer" class="pdfViewer singlePageView"></div>
 
-  <script src="pageviewer.js"></script>
+  <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
 </body>
 </html>
     `
