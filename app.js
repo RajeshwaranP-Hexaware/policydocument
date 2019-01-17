@@ -78,6 +78,10 @@ app.get('/getpolicydocument', function(req, res) {
     //res.sendFile(path.join(__dirname + '../../public/web_viewer.js'));
 });
 
+app.get('/getfile', function(req, res){
+    res.sendFile(path.join(__dirname + '/public/web/lpolicy.pdf'));
+});
+
 app.listen(process.env.port || process.env.PORT, function(){
     console.log('Listening on 3000');
 });
