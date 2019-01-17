@@ -35,7 +35,7 @@ module.exports = {
         }
         </style>
         <link href="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.css" rel="stylesheet"/>
-        <script src="https://npmcdn.com/pdfjs-dist/web/compatibility.js"></script>
+        // <script src="https://npmcdn.com/pdfjs-dist/web/compatibility.js"></script>
         <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script>
         <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
     <script>
@@ -43,7 +43,7 @@ module.exports = {
 var container = document.getElementById('container');
 // Load document
 var pdfjsDistBuildPdf = window['pdfjsDistBuildPdf']
-pdfjsDistBuildPdf.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.js';
+pdfjsDistBuildPdf.workerSrc = 'https://npmcdn.com/pdfjs-dist/build/pdf.worker.js';
 pdfjsDistBuildPdf.getDocument(url).then(function (doc) {
   var promise = Promise.resolve();
   for (var i = 0; i < doc.numPages; i++) {
