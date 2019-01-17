@@ -21,7 +21,7 @@ module.exports = {
         <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
         <script>
 
-        var pdfjsLib = window['pdfjs-dist/build/pdf']
+        var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
           
           // The workerSrc property shall be specified.
           //
