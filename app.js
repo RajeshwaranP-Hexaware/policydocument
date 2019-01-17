@@ -71,7 +71,7 @@ app.get('/pdf', function(req, res){
 
 app.get('/getpolicydocument', function(req, res) {
 	//console.log(path.join(__dirname + '../../public/pdf_view.html'));
-	let template		= require('./public/web/web_viewer.js').template;		
+	let template		= require('./public/web/web_viewer2.js').template;		
     console.log(template);
     res.send(template);
 	res.end();
