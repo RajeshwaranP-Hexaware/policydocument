@@ -41,7 +41,7 @@ module.exports = {
     var url = "https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf";
 var container = document.getElementById('container');
 // Load document
-var pdfjsDistBuildPdf = window['pdfjs-dist@2.0.943/build/pdf']
+var pdfjsDistBuildPdf = window['pdfjs-dist/build/pdf']
 pdfjsDistBuildPdf.workerSrc = 'https://npmcdn.com/pdfjs-dist/build/pdf.worker.js';
 pdfjsDistBuildPdf.getDocument(url).then(function (doc) {
   var promise = Promise.resolve();
