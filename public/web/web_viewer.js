@@ -42,7 +42,7 @@ module.exports = {
     var url = "https://cdn.mozilla.net/pdfjs/tracemonkey.pdf";
 var container = document.getElementById('container');
 // Load document
-var pdfjsDistBuildPdf = window['pdfjsDistBuildPdf']
+var pdfjsDistBuildPdf = window['pdfjs-dist/build/pdf']
 pdfjsDistBuildPdf.workerSrc = 'https://npmcdn.com/pdfjs-dist/build/pdf.worker.js';
 pdfjsDistBuildPdf.getDocument(url).then(function (doc) {
   var promise = Promise.resolve();
