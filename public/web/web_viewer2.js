@@ -16,8 +16,8 @@ module.exports = {
   </style>
 
   <link href="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.css" rel="stylesheet"/>
-
-  <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script>
+  <script src="https://npmcdn.com/requirejs/bin/r.js"></script>
+  <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script> 
         <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
         <script>
 
