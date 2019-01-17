@@ -41,9 +41,9 @@ module.exports = {
     var url = "https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf";
 var container = document.getElementById('container');
 // Load document
-var pdfjsDistBuildPdf = window['pdfjs-dist/build/pdf']
-pdfjsDistBuildPdf.workerSrc = 'https://npmcdn.com/pdfjs-dist/build/pdf.worker.js';
-pdfjsDistBuildPdf.getDocument(url).then(function (doc) {
+var pdfjsLib = window['pdfjs-dist/build/pdf']
+pdfjsLib.workerSrc = 'https://npmcdn.com/pdfjs-dist/build/pdf.worker.js';
+pdfjsLib.getDocument(url).then(function (doc) {
   var promise = Promise.resolve();
   for (var i = 0; i < doc.numPages; i++) {
     // One-by-one load pages
@@ -51,14 +51,14 @@ pdfjsDistBuildPdf.getDocument(url).then(function (doc) {
       return doc.getPage(id + 1).then(function (pdfPage) {
 // Add div with page view.
 var SCALE = 1.0; 
-var pdfPageView = new pdfjsDistBuildPdf.PDFPageView({
+var pdfPageView = new pdfjsLib.PDFPageView({
       container: container,
       id: id,
       scale: SCALE,
       defaultViewport: pdfPage.getViewport(SCALE),
       // We can enable text/annotations layers, if needed
-      textLayerFactory: new pdfjsDistBuildPdf.DefaultTextLayerFactory(),
-      annotationLayerFactory: new pdfjsDistBuildPdf.DefaultAnnotationLayerFactory()
+      textLayerFactory: new pdfjsLib.DefaultTextLayerFactory(),
+      annotationLayerFactory: new pdfjsLib.DefaultAnnotationLayerFactory()
     });
     // Associates the actual page with the view, and drawing it
     pdfPageView.setPdfPage(pdfPage);
