@@ -38,10 +38,10 @@ module.exports = {
         <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script>
         <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
     <script>
-    var url = "https://www.antennahouse.com/XSLsample/pdf/sample-link_1.pdf";
+    var url = "https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf";
 var container = document.getElementById('container');
 // Load document
-var pdfjsDistBuildPdf = window['pdfjs-dist/build/pdf']
+var pdfjsDistBuildPdf = window['pdfjs-dist@2.0.943/build/pdf']
 pdfjsDistBuildPdf.workerSrc = 'https://npmcdn.com/pdfjs-dist/build/pdf.worker.js';
 pdfjsDistBuildPdf.getDocument(url).then(function (doc) {
   var promise = Promise.resolve();
