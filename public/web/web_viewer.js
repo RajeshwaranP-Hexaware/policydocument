@@ -38,7 +38,7 @@ module.exports = {
         <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script>
         <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
     <script>
-    var url = "https://cdn.mozilla.net/pdfjs/tracemonkey.pdf";
+    var url = "https://www.antennahouse.com/XSLsample/pdf/sample-link_1.pdf";
 var container = document.getElementById('container');
 // Load document
 var pdfjsDistBuildPdf = window['pdfjs-dist/build/pdf']
