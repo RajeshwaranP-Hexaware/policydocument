@@ -43,7 +43,7 @@ module.exports = {
 var container = document.getElementById('container');
 // Load document
 var pdfjsDistBuildPdf = window['pdfjsDistBuildPdf']
-pdfjsDistBuildPdf.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
+pdfjsDistBuildPdf.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.js';
 pdfjsDistBuildPdf.getDocument(url).then(function (doc) {
   var promise = Promise.resolve();
   for (var i = 0; i < doc.numPages; i++) {
