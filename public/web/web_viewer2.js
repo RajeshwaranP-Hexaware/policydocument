@@ -21,17 +21,17 @@ module.exports = {
         <script>
         require.config({
             paths: {
-                'pdfjs-pdf': '//npmcdn.com/pdfjs-dist/build/pdf',
-                'pdfjs-pdf-viewer':'//npmcdn.com/pdfjs-dist/web/pdf_viewer'
+                'pdfjs-dist': '//npmcdn.com/pdfjs-dist'
             }
         });
 
-        require(['pdfjs-pdf', 'pdfjs-pdf-viewer'], function(pdfjsLib, pdfjsViewer) {
+        require(['pdfjs-dist/build/pdf', 'pdfjs-dist/web/pdf_viewer'], function(pdfjsLib, pdfjsViewer) {
             //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
           
           // The workerSrc property shall be specified.
           //
           console.log(pdfjsLib);
+          console.log(pdfjsViewer);
           pdfjsLib.GlobalWorkerOptions.workerSrc =
           'https://npmcdn.com/pdfjs-dist/build/pdf.worker.js';
           
