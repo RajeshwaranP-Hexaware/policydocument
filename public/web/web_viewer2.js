@@ -14,13 +14,12 @@ module.exports = {
       padding: 0;
     }
   </style>
-
-  <link href="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.css" rel="stylesheet"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  <link href="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.css" rel="stylesheet"/>
   <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script> 
-        <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
+  <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
         <script>
-        requirejs.config({
+        require.config({
             paths: {
                 pdfjsLib: '//npmcdn.com/pdfjs-dist/build/pdf'
             }
