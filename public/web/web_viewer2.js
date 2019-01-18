@@ -30,6 +30,7 @@ module.exports = {
           
           // The workerSrc property shall be specified.
           //
+          console.log(pdfjsLib);
           pdfjsLib.GlobalWorkerOptions.workerSrc =
           'https://npmcdn.com/pdfjs-dist/build/pdf.worker.js';
           
