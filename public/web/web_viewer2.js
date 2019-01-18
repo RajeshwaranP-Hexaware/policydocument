@@ -25,7 +25,7 @@ module.exports = {
             }
         });
 
-        require(['pdfjs-dist/build/pdf'], function(pdfjsLib) {
+        require(['pdfjs-dist/build/pdf', 'pdfjs-dist/web/pdf_viewer'], function(pdfjsLib, pdfjsViewer) {
             //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
           
           // The workerSrc property shall be specified.
