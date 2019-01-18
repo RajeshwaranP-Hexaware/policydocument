@@ -21,11 +21,12 @@ module.exports = {
         <script>
         require.config({
             paths: {
-                'pdfjs-dist': '//npmcdn.com/pdfjs-dist'
+                'pdfjs-pdf': '//npmcdn.com/pdfjs-dist/build/pdf',
+                'pdfjs-pdf-viewer':'//npmcdn.com/pdfjs-dist/web/pdf_viewer'
             }
         });
 
-        require(['pdfjs-dist/build/pdf', 'pdfjs-dist/web/pdf_viewer'], function(pdfjsLib, pdfjsViewer) {
+        require(['pdfjs-pdf', 'pdfjs-pdf-viewer'], function(pdfjsLib, pdfjsViewer) {
             //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
           
           // The workerSrc property shall be specified.
