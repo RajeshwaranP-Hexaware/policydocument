@@ -24,6 +24,11 @@ module.exports = {
                 'pdfjs-dist': '//npmcdn.com/pdfjs-dist'
             }
         });
+        
+        define(function(require) {
+            require('pdfjs-dist/build/pdf');
+            require('pdfjs-dist/web/pdf_viewer');
+        });
 
         require(['pdfjs-dist/build/pdf', 'pdfjs-dist/web/pdf_viewer'], function(pdfjsLib, pdfjsViewer) {
             //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
