@@ -20,14 +20,10 @@ module.exports = {
   <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
         <script>
         require.config({
+            baseUrl: '/',
             paths: {
                 'pdfjs-dist': '//npmcdn.com/pdfjs-dist'
             }
-        });
-        
-        define(function(require) {
-            require('pdfjs-dist/build/pdf');
-            require('pdfjs-dist/web/pdf_viewer');
         });
 
         require(['pdfjs-dist/build/pdf', 'pdfjs-dist/web/pdf_viewer'], function(pdfjsLib, pdfjsViewer) {
