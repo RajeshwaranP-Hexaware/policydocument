@@ -22,7 +22,7 @@ module.exports = {
         <script>
         requirejs.config({
             paths: {
-                pdfjsLib: 'https://npmcdn.com/pdfjs-dist/build/pdf.js'
+                pdfjsLib: '//npmcdn.com/pdfjs-dist/build/pdf.js'
             }
         });
 
