@@ -20,8 +20,14 @@ module.exports = {
   <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script> 
         <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
         <script>
+        requirejs.config({
+            paths: {
+                pdfjsLib: 'https://npmcdn.com/pdfjs-dist/build/pdf.js'
+            }
+        });
 
-        var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
+        require(['pdfjsLib'], function($) {
+            //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
           
           // The workerSrc property shall be specified.
           //
@@ -63,6 +69,8 @@ module.exports = {
               return pdfPageView.draw();
             });
           });
+        });
+        
 
         </script>
 </head>
