@@ -18,13 +18,25 @@ module.exports = {
   <link href="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.css" rel="stylesheet"/>
   <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script> 
   <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
-        <script>
-       
-          var pdfjsLib = window['pdfjs-dist/build/pdf'];
+</head>
+
+<body tabindex="1">
+<script>
+        requirejs.config({
+            baseUrl: '/',
+            paths: {
+                'pdfjsdist': '//npmcdn.com/pdfjs-dist/',
+                'pdfjsdistviewer': '//npmcdn.com/pdfjs-dist/web/pdf_viewer',
+            }
+        });
+
+        require(['pdfjsdist', 'pdfjsdistviewer'], function(pdfjsLib, pdfjsViewer) {
+            //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
           
           // The workerSrc property shall be specified.
           //
-          console.log("window",window['pdfjs-dist/build/pdf']);
+          console.log(pdfjsLib);
+          console.log(pdfjsViewer);
           pdfjsLib.GlobalWorkerOptions.workerSrc =
           'https://npmcdn.com/pdfjs-dist/build/pdf.worker.js';
           
@@ -63,11 +75,11 @@ module.exports = {
               return pdfPageView.draw();
             });
           });
+        });
+        
 
         </script>
-</head>
-
-<body tabindex="1">
+        
   <div id="pageContainer" class="pdfViewer singlePageView"></div>
 
   <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
