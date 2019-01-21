@@ -24,7 +24,7 @@ module.exports = {
 <script>
         requirejs.config({
             paths: {
-                'pdfjsdist': '//npmcdn.com/pdfjs-dist/',
+                'pdfjsdist': '//npmcdn.com/pdfjs-dist/build/pdf',
                 'pdfjsdistviewer': '//npmcdn.com/pdfjs-dist/web/pdf_viewer',
             }
         });
