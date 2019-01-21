@@ -23,7 +23,6 @@ module.exports = {
 <body tabindex="1">
 <script>
         requirejs.config({
-            baseUrl: '/',
             paths: {
                 'pdfjsdist': '//npmcdn.com/pdfjs-dist/',
                 'pdfjsdistviewer': '//npmcdn.com/pdfjs-dist/web/pdf_viewer',
@@ -79,7 +78,7 @@ module.exports = {
         
 
         </script>
-        
+
   <div id="pageContainer" class="pdfViewer singlePageView"></div>
 
   <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
