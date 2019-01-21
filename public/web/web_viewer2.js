@@ -21,7 +21,7 @@ module.exports = {
   <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
 
   <script>
-        requirejs.config({
+        require.config({
             paths: {
                 'pdfjsdist': 'https://npmcdn.com/pdfjs-dist/build/pdf',
                 'pdfjsdistviewer': 'https://npmcdn.com/pdfjs-dist/web/pdf_viewer',
