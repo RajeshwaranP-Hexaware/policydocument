@@ -35,7 +35,7 @@ module.exports = {
         
 
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
   <script>
   require.callback = function(pdfjsLib, pdfjsViewer) {
     //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
