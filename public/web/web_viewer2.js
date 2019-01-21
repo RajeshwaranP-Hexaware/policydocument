@@ -22,13 +22,13 @@ module.exports = {
   <script>
         var require = {};
         
-        require.config({
+        require.config = {
             paths: {
                 'pdfjsdist': 'https://npmcdn.com/pdfjs-dist/build/pdf',
                 'pdfjsdistviewer': 'https://npmcdn.com/pdfjs-dist/web/pdf_viewer',
             },
             waitSeconds: 15
-        });
+        };
         
         require.deps = ['pdfjsdist', 'pdfjsdistviewer'];
         require.callback = function(pdfjsLib, pdfjsViewer) {
