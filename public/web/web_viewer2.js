@@ -22,15 +22,15 @@ module.exports = {
   <script>
         var require = {};
         
-        require.config = {
-            paths: {
-                'pdfjsdist': 'https://npmcdn.com/pdfjs-dist/build/pdf',
-                'pdfjsdistviewer': 'https://npmcdn.com/pdfjs-dist/web/pdf_viewer',
-            },
-            waitSeconds: 15
-        };
+        // require.config = {
+        //     paths: {
+        //         'pdfjsdist': ,
+        //         'pdfjsdistviewer': ,
+        //     },
+        //     waitSeconds: 15
+        // };
         
-        require.deps = ['pdfjsdist', 'pdfjsdistviewer'];
+        require.deps = ['https://npmcdn.com/pdfjs-dist/build/pdf.js', 'https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js'];
         require.callback = function(pdfjsLib, pdfjsViewer) {
             //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
           
