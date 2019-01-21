@@ -16,16 +16,18 @@ module.exports = {
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
   <link href="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.css" rel="stylesheet"/>
-  
+  <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script> 
+  <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
         <script>
         require.config({
             baseUrl: '/',
             paths: {
-                'pdfjs-dist': '//npmcdn.com/pdfjs-dist'
+                'pdfjs-dist': '//npmcdn.com/pdfjs-dist/pdf',
+                'pdfjs-dist-viewer': '//npmcdn.com/pdfjs-dist/web/pdf_viewer',
             }
         });
 
-        require(['pdfjs-dist/build/pdf', 'pdfjs-dist/web/pdf_viewer'], function(pdfjsLib, pdfjsViewer) {
+        require(['pdfjs-dist', 'pdfjs-dist-viewer'], function(pdfjsLib, pdfjsViewer) {
             //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
           
           // The workerSrc property shall be specified.
