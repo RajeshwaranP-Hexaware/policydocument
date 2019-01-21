@@ -15,12 +15,13 @@ module.exports = {
     }
   </style>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
   <link href="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.css" rel="stylesheet"/>
   <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script> 
   <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
 
   <script>
+        var require = {};
+        
         require.config({
             paths: {
                 'pdfjsdist': 'https://npmcdn.com/pdfjs-dist/build/pdf',
@@ -28,8 +29,9 @@ module.exports = {
             },
             waitSeconds: 15
         });
-
-        require(['pdfjsdist', 'pdfjsdistviewer'], function(pdfjsLib, pdfjsViewer) {
+        
+        require.deps = ['pdfjsdist', 'pdfjsdistviewer'];
+        require.callback = function(pdfjsLib, pdfjsViewer) {
             //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
           
           // The workerSrc property shall be specified.
@@ -74,11 +76,11 @@ module.exports = {
               return pdfPageView.draw();
             });
           });
-        });
+        };
         
 
   </script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 </head>
 
 <body tabindex="1">
