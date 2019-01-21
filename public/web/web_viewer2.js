@@ -29,7 +29,7 @@ module.exports = {
             waitSeconds: 15
         });
 
-        define(['pdfjsdist', 'pdfjsdistviewer'], function(pdfjsLib, pdfjsViewer) {
+        require(['pdfjsdist', 'pdfjsdistviewer'], function(pdfjsLib, pdfjsViewer) {
             //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
           
           // The workerSrc property shall be specified.
