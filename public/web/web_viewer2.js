@@ -21,7 +21,7 @@ module.exports = {
         require.config({
             baseUrl: '/',
             paths: {
-                'pdfjs-dist': '//npmcdn.com/pdfjs-dist/'
+                'pdfjs-dist': '//npmcdn.com/pdfjs-dist'
             }
         });
 
