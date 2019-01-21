@@ -22,7 +22,7 @@ module.exports = {
         require.config({
             baseUrl: '/',
             paths: {
-                'pdfjs-dist': '//npmcdn.com/pdfjs-dist/pdf',
+                'pdfjs-dist': '//npmcdn.com/pdfjs-dist/build/pdf',
                 'pdfjs-dist-viewer': '//npmcdn.com/pdfjs-dist/web/pdf_viewer',
             }
         });
