@@ -26,7 +26,11 @@ module.exports = {
         'pdfjsDistView': 'https://npmcdn.com/pdfjs-dist/web/pdf_viewer'
     }}};
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
+  <script data-main = "{requirejs.config({
+    paths: {
+        'pdfjsDistPdf': 'https://npmcdn.com/pdfjs-dist/build/pdf',
+        'pdfjsDistView': 'https://npmcdn.com/pdfjs-dist/web/pdf_viewer'
+    }})}" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
   <script>
         require(['pdfjsDistPdf', 'pdfjsDistView'], function(pdfjsLib, pdfjsViewer) {
             //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
