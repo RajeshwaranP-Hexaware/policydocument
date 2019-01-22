@@ -20,9 +20,16 @@ module.exports = {
   <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
   
   <script>
-        var require = {
-          deps : ['https://npmcdn.com/pdfjs-dist/build/pdf.js', 'https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js'],
-          callback : function(pdfjsLib, pdfjsViewer) {
+        require.config({
+            paths: {
+                'pdfjsDistPdf': '//npmcdn.com/pdfjs-dist/build/pdf',
+                'pdfjsDistView': '//npmcdn.com/pdfjs-dist/web/pdf_viewer'
+            }
+        });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
+  <script>
+        require(['pdfjsDistPdf', 'pdfjsDistView'], function(pdfjsLib, pdfjsViewer) {
             //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
           
           // The workerSrc property shall be specified.
@@ -67,10 +74,9 @@ module.exports = {
               return pdfPageView.draw();
             });
           });
-        }
-        };
+        });
+        
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 </head>
 
 <body tabindex="1">
