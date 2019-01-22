@@ -24,7 +24,7 @@ module.exports = {
     paths: {
         'pdfjsDistPdf': '//npmcdn.com/pdfjs-dist/build/pdf',
         'pdfjsDistView': '//npmcdn.com/pdfjs-dist/web/pdf_viewer'
-    }};
+    }}};
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
   <script>
