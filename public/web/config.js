@@ -1,7 +1,7 @@
 requirejs.config({
     baseUrl: 'public/',
     paths: {
-        'pdfjsDistPdf': 'build/pdf',
-        'pdfjsDistView': 'web/pdf_viewer'
+        'pdfjsDistPdf': '//npmcdn.com/pdfjs-dist/build/pdf',
+        'pdfjsDistView': '//npmcdn.com/pdfjs-dist/web/pdf_viewer'
     }}
 )
