@@ -21,7 +21,6 @@ module.exports = {
   
   <script data-main = "web/config.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
   <script>
-  define(['config'], function(config){
     require(['pdfjsDistPdf', 'pdfjsDistView'], function(pdfjsLib, pdfjsViewer) {
       //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
     
@@ -67,7 +66,6 @@ module.exports = {
         return pdfPageView.draw();
       });
     });
-  });
   });
   </script>
 </head>
