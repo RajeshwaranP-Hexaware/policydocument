@@ -19,6 +19,13 @@ module.exports = {
   <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script> 
   <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
   
+</head>
+
+<body tabindex="1">
+
+  <div id="pageContainer" class="pdfViewer singlePageView"></div>
+
+  <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
   <script data-main = "web/config" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
   <script>
     require(['pdf', 'pdf_viewer'], function(pdfjsLib, pdfjsViewer) {
@@ -68,13 +75,6 @@ module.exports = {
     });
   });
   </script>
-</head>
-
-<body tabindex="1">
-
-  <div id="pageContainer" class="pdfViewer singlePageView"></div>
-
-  <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
 </body>
 </html>
     `
