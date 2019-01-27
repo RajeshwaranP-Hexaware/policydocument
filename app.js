@@ -78,6 +78,17 @@ app.get('/getpolicydocument', function(req, res) {
     //res.sendFile(path.join(__dirname + '../../public/web_viewer.js'));
 });
 
+
+app.get('/final', function(req, res) {
+	//console.log(path.join(__dirname + '../../public/pdf_view.html'));
+	let template		= require('./public/final.js').template;		
+    console.log(template);
+    res.send(template);
+	res.end();
+    //res.sendFile(path.join(__dirname + '../../public/web_viewer.js'));
+});
+
+
 app.get('/different', function(req, res) {
 	//console.log(path.join(__dirname + '../../public/pdf_view.html'));
 	let template		= require('./public/web/web_viewer3.js').template;		
