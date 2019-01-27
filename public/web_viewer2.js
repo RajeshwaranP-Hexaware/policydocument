@@ -71,10 +71,12 @@ var pdfFindController = new pdfjsViewer.PDFFindController({
 
 var pdfViewer = new pdfjsViewer.PDFViewer({
   container: container,
-  currentPageNumber : 2,
   linkService: pdfLinkService,
   findController: pdfFindController,
 });
+console.log(pdfViewer.currentPageNumber);
+pdfViewer.currentPageNumber = 2;
+console.log(pdfViewer.currentPageNumber);
 pdfLinkService.setViewer(pdfViewer);
 
 document.addEventListener('pagesinit', function () {
