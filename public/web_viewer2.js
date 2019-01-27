@@ -56,7 +56,7 @@ module.exports = {
         var CMAP_URL = 'https://npmcdn.com/pdfjs-dist/cmaps/';
         var CMAP_PACKED = true;
         
-        var DEFAULT_URL = 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf';
+        var DEFAULT_URL = 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf#page=2';
         var SEARCH_FOR = ''; // try 'Mozilla';
 
 var container = document.getElementById('viewerContainer');
