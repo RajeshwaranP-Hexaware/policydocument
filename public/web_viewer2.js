@@ -37,7 +37,7 @@ module.exports = {
         console.log(pdfjsLib);
         console.log(pdfjsViewer);
         pdfjsLib = window['pdfjsLib'];
-        pdfjsViewer = window[pdfjsViewer]
+        pdfjsViewer = window['pdfjsViewer']
         console.log(pdfjsLib);
         console.log(pdfjsViewer);
         pdfjsLib.GlobalWorkerOptions.workerSrc =
