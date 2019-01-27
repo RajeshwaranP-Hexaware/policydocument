@@ -71,6 +71,7 @@ var pdfFindController = new pdfjsViewer.PDFFindController({
 
 var pdfViewer = new pdfjsViewer.PDFViewer({
   container: container,
+  id : 2,
   linkService: pdfLinkService,
   findController: pdfFindController,
 });
