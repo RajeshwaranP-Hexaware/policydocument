@@ -39,7 +39,8 @@ See https://github.com/adobe-type-tools/cmap-resources
 <script src="../build/pdf.js"></script>
     <script src="viewer.js"></script> -->
     <link href="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.css" rel="stylesheet"/>
-    
+    <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script> 
+    <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>    
     
   </head>
 
@@ -392,10 +393,7 @@ See https://github.com/adobe-type-tools/cmap-resources
     </div> <!-- outerContainer -->
     <div id="printContainer"></div>
 
-    <script src="https://npmcdn.com/pdfjs-dist/build/pdf.js"></script> 
-    <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
 
-    
   </body>
 </html> `
 };
