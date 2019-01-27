@@ -29,11 +29,15 @@ module.exports = {
       <script data-main = "config" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
       <script>
           require(['config'], function(){
-            define(['pdfjsDistPdf', 'pdfjsDistView'], function(pdfjsLib, pdfjsViewer) {
+            require(['pdfjsDistPdf', 'pdfjsDistView'], function(pdfjsLib, pdfjsViewer) {
           //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
         
         // The workerSrc property shall be specified.
         //
+        console.log(pdfjsLib);
+        console.log(pdfjsViewer);
+        pdfjsLib = window['pdfjsLib'];
+        pdfjsViewer = window[pdfjsViewer]
         console.log(pdfjsLib);
         console.log(pdfjsViewer);
         pdfjsLib.GlobalWorkerOptions.workerSrc =
