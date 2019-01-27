@@ -8,11 +8,17 @@ module.exports = {
       <title>PDF.js page viewer using built components</title>
     
       <style>
-        body {
-          background-color: #808080;
-          margin: 0;
-          padding: 0;
-        }
+      body {
+        background-color: #808080;
+        margin: 0;
+        padding: 0;
+      }
+      #viewerContainer {
+        overflow: auto;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
       </style>
     
       <link href="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.css" rel="stylesheet"/>
@@ -23,7 +29,9 @@ module.exports = {
     
     <body tabindex="1">
     
-      <div id="pageContainer" class="pdfViewer singlePageView"></div>
+    <div id="viewerContainer">
+    <div id="viewer" class="pdfViewer"></div>
+  </div>
     
       <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
       <script data-main = "config" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
@@ -49,35 +57,47 @@ module.exports = {
         var CMAP_PACKED = true;
         
         var DEFAULT_URL = 'https://blog.mozilla.org/security/files/2015/05/HTTPS-FAQ.pdf';
-        var PAGE_TO_VIEW = 1;
-        var SCALE = 1.0;
-        
-        var container = document.getElementById('pageContainer');
-        
-        // Loading document.
-        var loadingTask = pdfjsLib.getDocument({
-          url: DEFAULT_URL,
-          cMapUrl: CMAP_URL,
-          cMapPacked: CMAP_PACKED,
-        });
-        loadingTask.promise.then(function(pdfDocument) {
-          // Document loaded, retrieving the page.
-          return pdfDocument.getPage(PAGE_TO_VIEW).then(function (pdfPage) {
-            // Creating the page view with default parameters.
-            var pdfPageView = new pdfjsViewer.PDFPageView({
-              container: container,
-              id: PAGE_TO_VIEW,
-              scale: SCALE,
-              defaultViewport: pdfPage.getViewport({ scale: SCALE, }),
-              // We can enable text/annotations layers, if needed
-              textLayerFactory: new pdfjsViewer.DefaultTextLayerFactory(),
-              annotationLayerFactory: new pdfjsViewer.DefaultAnnotationLayerFactory(),
-            });
-            // Associates the actual page with the view, and drawing it
-            pdfPageView.setPdfPage(pdfPage);
-            return pdfPageView.draw();
-          });
-        });
+        var SEARCH_FOR = ''; // try 'Mozilla';
+
+var container = document.getElementById('viewerContainer');
+
+// (Optionally) enable hyperlinks within PDF files.
+var pdfLinkService = new pdfjsViewer.PDFLinkService();
+
+// (Optionally) enable find controller.
+var pdfFindController = new pdfjsViewer.PDFFindController({
+  linkService: pdfLinkService,
+});
+
+var pdfViewer = new pdfjsViewer.PDFViewer({
+  container: container,
+  linkService: pdfLinkService,
+  findController: pdfFindController,
+});
+pdfLinkService.setViewer(pdfViewer);
+
+document.addEventListener('pagesinit', function () {
+  // We can use pdfViewer now, e.g. let's change default scale.
+  pdfViewer.currentScaleValue = 'page-width';
+
+  if (SEARCH_FOR) { // We can try search for things
+    pdfFindController.executeCommand('find', { query: SEARCH_FOR, });
+  }
+});
+
+// Loading document.
+var loadingTask = pdfjsLib.getDocument({
+  url: DEFAULT_URL,
+  cMapUrl: CMAP_URL,
+  cMapPacked: CMAP_PACKED,
+});
+loadingTask.promise.then(function(pdfDocument) {
+  // Document loaded, specifying document for the viewer and
+  // the (optional) linkService.
+  pdfViewer.setDocument(pdfDocument);
+
+  pdfLinkService.setDocument(pdfDocument, null);
+});
       });
     });
       </script>
