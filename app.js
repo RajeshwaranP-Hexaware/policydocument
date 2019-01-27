@@ -73,7 +73,9 @@ app.get('/getpolicydocument', function(req, res) {
 	//console.log(path.join(__dirname + '../../public/pdf_view.html'));
     let template		= require('./public/web_viewer2.js').template;		
     let pageNo = req.query.pageNo || 1;
+    let fileName = req.query.fileName;
     template = template.replace('pppageNo',pageNo);
+    template = template.replace('ppFileUrl', 'https://policy-test.herokuapp.com/getfile?fileName='+fileName);
     console.log(template);
     res.send(template);
 	res.end();
@@ -101,7 +103,9 @@ app.get('/different', function(req, res) {
 });
 
 app.get('/getfile', function(req, res){
-    res.sendFile(path.join(__dirname + '/public/web/lpolicy.pdf'));
+    let fileName = req.query.fileName;
+    console.log(fileName);
+    res.sendFile(path.join(__dirname + '/public/web/'+ fileName));
 });
 
 app.listen(process.env.port || process.env.PORT, function(){
