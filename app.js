@@ -105,7 +105,7 @@ app.get('/different', function(req, res) {
 app.get('/getfile', function(req, res){
     let fileName = req.query.fileName;
     console.log(fileName);
-    res.sendFile(path.join(__dirname + '/public/web/'+ fileName));
+    res.sendFile(path.join(__dirname + '/public/'+ fileName));
 });
 
 app.listen(process.env.port || process.env.PORT, function(){
