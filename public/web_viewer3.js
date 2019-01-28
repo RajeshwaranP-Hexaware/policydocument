@@ -34,26 +34,19 @@ module.exports = {
   </div>
       
       <script src="https://npmcdn.com/pdfjs-dist/web/pdf_viewer.js"></script>
-       <script>
-       var require = { config : {
-         paths: {
-            'pdfjsDistPdf': 'https://npmcdn.com/pdfjs-dist/build/pdf',
-             'pdfjsDistView': 'https://npmcdn.com/pdfjs-dist/web/pdf_viewer'
-         }}};
-       </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script>
+       
       <script>
       
          // require(['config'], function(){
-            require(['pdfjsDistPdf', 'pdfjsDistView'], function(pdfjsLib, pdfjsViewer) {
+         //   require(['pdfjsDistPdf', 'pdfjsDistView'], function(pdfjsLib, pdfjsViewer) {
           //var pdfjsLib = require('https://npmcdn.com/pdfjs-dist/build/pdf.js');
         
         // The workerSrc property shall be specified.
         //
         console.log(pdfjsLib);
         console.log(pdfjsViewer);
-        pdfjsLib = window['pdfjsLib'];
-        pdfjsViewer = window['pdfjsViewer']
+        pdfjsLib = window['pdfjs-dist/build/pdf'];
+        pdfjsViewer = window['pdfjs-dist/web/pdf_viewer']
         console.log(pdfjsLib);
         console.log(pdfjsViewer);
         pdfjsLib.GlobalWorkerOptions.workerSrc =
@@ -108,7 +101,7 @@ loadingTask.promise.then(function(pdfDocument) {
 
   pdfLinkService.setDocument(pdfDocument, null);
 });
-      });
+    //  });
    // });
       </script>
     </body>
